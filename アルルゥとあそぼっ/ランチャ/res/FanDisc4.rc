@@ -1,0 +1,348 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日本語 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_WINAVG              ICON                    "exeicon.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINMENU MENUEX 
+BEGIN
+    POPUP "システム(&S)",                   65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "環境設定(&S)",                40001,MFT_STRING,MFS_ENABLED
+        MENUITEM "終了(&X)",                    40002,MFT_STRING,MFS_ENABLED
+        MENUITEM MFT_SEPARATOR
+        MENUITEM "タイトル画面に戻る(&T)",      40013,MFT_STRING,MFS_ENABLED
+    END
+    POPUP "画面モード(&W)",                 65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "フルスクリーンモード",        40003,MFT_STRING,MFS_ENABLED
+        MENUITEM "Windowモード",                40004,MFT_STRING,MFS_ENABLED
+    END
+    POPUP "表示設定(&V)",                   65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "自動送り",                    40010,MFT_STRING,MFS_ENABLED
+        MENUITEM "既読スキップ",                40011,MFT_STRING,MFS_ENABLED
+    END
+    POPUP "ヘルプ(&H)",                     65535,
+    MFT_STRING | MFT_RIGHTJUSTIFY,MFS_ENABLED
+    BEGIN
+        MENUITEM "バージョン情報",              40005,MFT_STRING,MFS_ENABLED
+        MENUITEM MFT_SEPARATOR
+        MENUITEM "Leafホームページを開く（オンライン時専用）", 40007,
+        MFT_STRING,MFS_ENABLED
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTDIALOG DIALOGEX 0, 0, 195, 51
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "バージョン情報"
+FONT 9, "ＭＳ Ｐゴシック", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,139,7,49,15
+    LTEXT           "アルルゥとあそぼ！！ Ver 1.01",IDC_STATIC,31,7,101,8
+    LTEXT           "―――――――――――――",IDC_STATIC,31,15,107,8
+    LTEXT           "(C) 2004　Leaf/AQUAPLUS",IDC_STATIC,30,23,99,11
+    ICON            IDI_WINAVG,IDC_STATIC,7,7,20,20
+    LTEXT           "http://leaf.aquaplus.co.jp",IDC_WWW,35,35,72,8,
+                    SS_NOTIFY
+END
+
+IDD_INFODIALOG DIALOGEX 0, 0, 203, 163
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE
+FONT 9, "ＭＳ Ｐゴシック", 400, 0, 0x80
+BEGIN
+    LTEXT           "システム情報",IDC_STATIC,7,6,40,8
+    EDITTEXT        IDC_EDIT1,14,18,184,127,ES_MULTILINE | ES_NOHIDESEL | 
+                    ES_OEMCONVERT | ES_READONLY | ES_WANTRETURN | NOT 
+                    WS_BORDER | NOT WS_TABSTOP
+    LTEXT           "http://leaf.aquaplus.co.jp",IDC_WWW,7,148,72,8,
+                    SS_NOTIFY
+END
+
+IDD_CONFIGDIALOG DIALOGEX 0, 0, 255, 207
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "動作環境設定"
+FONT 9, "ＭＳ Ｐゴシック", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,78,186,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,139,186,50,14
+    CONTROL         "",IDC_CONFIGTAB,"SysTabControl32",0x0,7,7,241,174
+    PUSHBUTTON      "更新",IDC_CFGUPDATE,199,186,50,14,WS_DISABLED
+END
+
+IDD_CONFIG1 DIALOGEX 0, 0, 203, 150
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE
+FONT 9, "ＭＳ Ｐゴシック", 400, 0, 0x80
+BEGIN
+    LTEXT           "メッセージ速度",IDC_STATIC,7,7,44,8
+    LTEXT           "遅い",IDC_STATIC,7,20,14,8
+    LTEXT           "速い",IDC_STATIC,182,19,14,8
+    CONTROL         "",IDC_MSGSPEED,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_BOTH | TBS_ENABLESELRANGE | WS_TABSTOP,7,29,189,26
+    LTEXT           "メッセージ自動送り",IDC_STATIC,7,61,56,8
+    LTEXT           "遅い",IDC_STATIC,7,74,14,8
+    LTEXT           "速い",IDC_STATIC,182,73,14,8
+    CONTROL         "",IDC_AUTOMSGSPEED,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_BOTH | TBS_ENABLESELRANGE | WS_TABSTOP,7,86,189,26
+    CONTROL         "Ctrlキーによる未読スキップを有効にする",IDC_SKIPENABLE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,118,135,10
+    CONTROL         "メッセージスキップ中はグラフィックエフェクトをカットする",
+                    IDC_SKIPEFFECT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,
+                    133,175,10
+END
+
+IDD_CONFIG2 DIALOGEX 0, 0, 201, 163
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE
+FONT 9, "ＭＳ Ｐゴシック", 400, 0, 0x80
+BEGIN
+    LTEXT           "BGMボリューム",IDC_STATIC,7,7,46,8
+    LTEXT           "MIN",IDC_STATIC,7,20,12,8
+    LTEXT           "MAX",IDC_STATIC,179,20,15,8
+    CONTROL         "",IDC_SLIDERBGM,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_BOTH | TBS_ENABLESELRANGE | WS_TABSTOP,7,27,187,28
+    LTEXT           "効果音ボリューム",IDC_STATIC,7,80,52,8
+    LTEXT           "MIN",IDC_STATIC,7,93,12,8
+    LTEXT           "MAX",IDC_STATIC,179,93,15,8
+    CONTROL         "",IDC_SLIDERSE,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_BOTH | TBS_ENABLESELRANGE | WS_TABSTOP,7,100,187,28
+END
+
+IDD_VOICECONFIG DIALOGEX 0, 0, 221, 174
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE
+FONT 9, "ＭＳ Ｐゴシック", 400, 0, 0x80
+BEGIN
+    CONTROL         "VOICEのあるキャラ全てON",IDC_VSELECT1,"Button",
+                    BS_AUTORADIOBUTTON,15,20,95,10
+    CONTROL         "男性キャラは全てOFF",IDC_VSELECT2,"Button",
+                    BS_AUTORADIOBUTTON,115,20,74,10
+    CONTROL         "全てのキャラをOFF",IDC_VSELECT3,"Button",
+                    BS_AUTORADIOBUTTON,15,35,73,10
+    CONTROL         "キャラごとに設定する",IDC_VSELECT4,"Button",
+                    BS_AUTORADIOBUTTON,115,35,78,10
+    GROUPBOX        "VOICEの設定",IDC_STATIC,7,7,192,46
+    CONTROL         "Hシーン時は男性キャラは全てOFF",IDC_VOICEHMAN,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,58,113,10
+    CONTROL         "メッセージ切替時にVOICEを停止する",IDC_VOICEREPEAT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,72,129,10
+    LTEXT           "キャラクター個別設定",IDC_STATIC,57,88,64,8
+    CONTROL         "折原　茜",IDC_VCHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,102,41,10
+    CONTROL         "片桐　恵",IDC_VCHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,68,102,41,10
+    CONTROL         "香月　ちはや",IDC_VCHECK3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,128,102,54,10
+    CONTROL         "綾之部　可憐",IDC_VCHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,117,55,10
+    CONTROL         "綾之部　珠美",IDC_VCHECK5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,68,117,55,10
+    CONTROL         "折原　志乃",IDC_VCHECK6,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,128,117,48,10
+    CONTROL         "主人公（恭介）",IDC_VCHECK7,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,132,57,10
+    CONTROL         "早間　友則",IDC_VCHECK8,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,68,132,48,10
+    CONTROL         "岸田　洋一",IDC_VCHECK9,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,128,132,48,10
+    CONTROL         "その他女性キャラ",IDC_VCHECK10,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,147,68,10
+    CONTROL         "その他男性キャラ",IDC_VCHECK11,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,80,147,68,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 188
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 44
+    END
+
+    IDD_INFODIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 198
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 156
+    END
+
+    IDD_CONFIGDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 248
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 200
+    END
+
+    IDD_CONFIG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 196
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 143
+    END
+
+    IDD_CONFIG2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 194
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 156
+    END
+
+    IDD_VOICECONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 214
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 167
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,1,0
+ PRODUCTVERSION 1,0,1,0
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041104b0"
+        BEGIN
+            VALUE "CompanyName", "Leaf/AQUAPLUS"
+            VALUE "FileDescription", "FanDisc4 アプリケーション"
+            VALUE "FileVersion", "1, 0, 1, 0"
+            VALUE "InternalName", "FanDisc4"
+            VALUE "LegalCopyright", "(C)2003　Leaf/AQUAPLUS"
+            VALUE "OriginalFilename", "FanDisc4.exe"
+            VALUE "ProductName", "アルルゥとあそぼ！！"
+            VALUE "ProductVersion", "1, 0, 1, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x411, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_LINKCURSOR          CURSOR                  "llinksel.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR ACCELERATORS 
+BEGIN
+    VK_F6,          ID_LOADEXEC,            VIRTKEY, NOINVERT
+    VK_F5,          ID_SAVEEXEC,            VIRTKEY, NOINVERT
+    VK_RETURN,      ID_DISPCHANGE,          VIRTKEY, ALT, NOINVERT
+END
+
+#endif    // 日本語 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

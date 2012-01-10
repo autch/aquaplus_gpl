@@ -1,0 +1,15 @@
+xvidcore for Debian
+-------------------
+
+For ia32 CPU users:
+This version of xvidcore is compiled so it can run on all ia32 CPUs.
+It's done that way to comply with the Debian policy.
+
+However, xvidcore still uses specific instruction set optimized
+code detecting CPU features at runtime. So all in all, this binary
+won't be much slower than a specific subarch targeted build. But
+if you're in search of maximum speed, rebuilding the package
+with -march/-mcpu/-mtune options matching your CPU can increase
+codec's performance up to 2% or 3%.
+ 
+ -- Edouard Gomez <ed.gomez@free.fr>, Sun,  4 May 2003 20:55:37 +0200

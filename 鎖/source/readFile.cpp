@@ -1,0 +1,455 @@
+#include "ClCommon.h"
+
+ClReadFile	*readFile = NULL;
+
+struct LACHEAD{
+	char	head[4];	
+	int		fileCnt;
+};
+
+#define Ns   4096
+#define Fs     18
+
+ClReadFile::ClReadFile()
+{
+	int		i;
+	ArcFile.reserve(15);
+	for(i=0;i<15;i++){
+		ArcFile[i].handle = NULL;
+		ArcFile[i].fileCount = 0;
+		ArcFile[i].pack_file = NULL;
+	}
+	openFileNum = 0;
+} // ClReadFile::ClReadFile
+
+ClReadFile::~ClReadFile()
+{
+	int			i;
+	for(i=0;i<openFileNum;i++){
+		CloseHandle(ArcFile[i].handle);
+		delete ArcFile[i].pack_file;
+	}
+} // ClReadFile::~ClReadFile
+
+int ClReadFile::OpenPackFile(LPCSTR packName,int packNum)
+{
+	int			i,j;
+	LACHEAD		head;
+	HANDLE		handle;
+	DWORD		rsize;
+	char		filename[MAX_PATH];
+	arc_file_info	arcFileInfo;
+
+	wsprintf(filename,"%s.PAK",packName);
+	handle = CreateFile(filename,GENERIC_READ,FILE_SHARE_READ,NULL,OPEN_EXISTING,0L,NULL);
+	if(INVALID_HANDLE_VALUE==handle)return -1;	
+
+	arcFileInfo.handle = handle;
+	lstrcpy(arcFileInfo.dirName,packName);
+	ReadFile(handle,&head,sizeof(LACHEAD),&rsize,NULL);
+	arcFileInfo.fileCount = head.fileCnt;
+	arcFileInfo.pack_file = new file_info[head.fileCnt];
+	if((-1)==packNum || packNum>=openFileNum){
+		ArcFile.push_back(arcFileInfo);
+	}else{
+		my_deletes(ArcFile[packNum].pack_file);
+		ArcFile[packNum] = arcFileInfo;
+	}
+	ReadFile(handle,arcFileInfo.pack_file,sizeof(file_info)*head.fileCnt,&rsize,NULL);
+	for(i=0;i<arcFileInfo.fileCount;i++){
+		for(j=0;j<int(lstrlen(arcFileInfo.pack_file[i].fname));j++){
+			arcFileInfo.pack_file[i].fname[j] = ~(arcFileInfo.pack_file[i].fname[j]);
+		}
+	}
+	if(packNum!=(-1) && packNum<openFileNum){
+		return packNum;
+	}
+	openFileNum ++;
+	return (openFileNum -1);
+} // ClReadFile::OpenPackFile
+
+int ClReadFile::OpenPackFileFromRes(WORD res_id)
+{
+	int				i,j;
+	LACHEAD			head;
+	arc_file_info	arcFileInfo;
+
+	HRSRC hSrc = FindResource(NULL,MAKEINTRESOURCE(res_id),"binary");
+	HGLOBAL hGR = LoadResource(NULL,hSrc);
+	char *lpMemory = (char *)LockResource(hGR);
+	CopyMemory(&head,lpMemory,sizeof(LACHEAD));
+	lpMemory += sizeof(LACHEAD);
+	arcFileInfo.fileCount = head.fileCnt;
+	arcFileInfo.resID = res_id;
+	arcFileInfo.pack_file = new file_info[head.fileCnt];
+	ArcFile.push_back(arcFileInfo);
+	CopyMemory(arcFileInfo.pack_file,lpMemory,sizeof(file_info)*head.fileCnt);
+	lpMemory += sizeof(file_info)*head.fileCnt;
+	for(i=0;i<arcFileInfo.fileCount;i++){
+		for(j=0;j<int(lstrlen(arcFileInfo.pack_file[i].fname));j++){
+			arcFileInfo.pack_file[i].fname[j] = ~(arcFileInfo.pack_file[i].fname[j]);
+		}
+	}
+	openFileNum ++;
+	FreeResource(hGR);
+	return (openFileNum -1);
+}
+
+int ClReadFile::ReadPackFile(int arcFileNum, LPCSTR decFile, char **fileBuf)
+{
+	int		i;
+
+	HANDLE	hFile;
+	DWORD	rsize;
+	int		out_size;
+	char	filename[MAX_PATH];
+
+	wsprintf(filename,"%s\\%s",ArcFile[arcFileNum].dirName,decFile);
+
+	*fileBuf = NULL;
+	DWORD attr = GetFileAttributes(filename);
+	if((-1)!=attr && (attr & FILE_ATTRIBUTE_ARCHIVE)){		
+		hFile = CreateFile(filename,GENERIC_READ,0,NULL,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL|MY_FILE_SCAN,NULL);
+		out_size = GetFileSize(hFile,NULL);
+		*fileBuf = (char *)cl_malloc(out_size+1);
+		ReadFile(hFile,*fileBuf,out_size,&rsize,NULL);
+		(*fileBuf)[out_size] = '\0';
+		CloseHandle(hFile);
+		return (out_size);
+	}
+	i = SearchFile(arcFileNum,decFile,TRUE);
+	if( (-1)==i ) return 0;	
+	if(0xFFFF == ArcFile[arcFileNum].resID){	
+		return(ReadPackFileNum(arcFileNum,i,fileBuf));
+	}else{
+		return(ReadPackFileNumFromRes(arcFileNum,i,fileBuf));
+	}
+} // ClReadFile::ReadPackFile
+
+int ClReadFile::DecodePackFile(int read_size,BYTE *readFile, char **fileBuf)
+{
+	int i, j, k, r, c;
+	unsigned int flags;
+	int out_size,write_size;
+	unsigned char	*rfP,*ofP;
+	unsigned char text[Ns+Fs-1];
+
+	out_size  = *(int *)readFile;
+	rfP = readFile + 4;
+	*fileBuf = (char *)cl_malloc(out_size+1);
+	if(NULL==*fileBuf){
+		return 0;
+	}
+	ofP = (unsigned char *)*fileBuf;
+	write_size = 0;
+	ZeroMemory(text, Ns - Fs);					
+	r = Ns - Fs;  flags = 0;
+	for ( ; ; ) {
+		if (((flags >>= 1) & 256) == 0) {
+			c = *(rfP ++); read_size --;
+			if (read_size < 0) break;
+			flags = c | 0xff00;
+		}
+		if (flags & 1) {
+			c = *(rfP ++); read_size --;
+			if (read_size < 0) break;
+			*(ofP ++) = c;  write_size ++;
+			if(write_size>out_size){
+				cl_free(readFile);	cl_free(*fileBuf);
+				return 0;
+			}
+			text[r++] = c;  r &= (Ns - 1);
+		} else {
+			i = *(rfP ++); read_size --;
+			if (read_size < 0) break;
+			j = *(rfP ++); read_size --;
+			if (read_size < 0) break;
+			i |= ((j & 0xf0) << 4);  j = (j & 0x0f) + 2;
+			for (k = 0; k <= j; k++) {
+				c = text[(i + k) & (Ns - 1)];
+				*(ofP ++) = c; write_size ++;
+				if(write_size>out_size){
+					cl_free(readFile);	cl_free(*fileBuf);
+					return 0;
+				}
+				text[r++] = c;  r &= (Ns - 1);
+			}
+		}
+	}
+	(*fileBuf)[out_size] = 0;
+	return (out_size);
+} // ClReadFile::DecodePackFile
+
+int ClReadFile::ReadPackFileNum(int arcFileNum, int num, char **fileBuf)
+{
+	DWORD	rsize;
+	int out_size;
+	unsigned char	*readFile;
+
+	if(num >= ArcFile[arcFileNum].fileCount) return 0;	
+	SetFilePointer(ArcFile[arcFileNum].handle,ArcFile[arcFileNum].pack_file[num].seekPoint,NULL,FILE_BEGIN);
+	if(0==ArcFile[arcFileNum].pack_file[num].bCompress){	
+		out_size = ArcFile[arcFileNum].pack_file[num].pack_size;
+		*fileBuf = (char *)cl_malloc(out_size+1);
+		ReadFile(ArcFile[arcFileNum].handle,*fileBuf,out_size,&rsize,NULL);
+		(*fileBuf)[out_size] = 0;
+		return (out_size);
+	}
+	readFile = (unsigned char *)cl_malloc(ArcFile[arcFileNum].pack_file[num].pack_size+1);
+	if(NULL==readFile)return 0;
+	ReadFile(ArcFile[arcFileNum].handle,readFile,ArcFile[arcFileNum].pack_file[num].pack_size,&rsize,NULL);
+	readFile[ArcFile[arcFileNum].pack_file[num].pack_size] = 0;
+
+	out_size = DecodePackFile(ArcFile[arcFileNum].pack_file[num].pack_size - 4,readFile,fileBuf);
+	cl_free(readFile);
+	return out_size;
+} // ClReadFile::ReadPackFileNum
+
+int ClReadFile::ReadPackFileNumFromRes(int arcFileNum, int num, char **fileBuf)
+{
+	int		out_size;
+	unsigned char	*readFile;
+
+	if(num >= ArcFile[arcFileNum].fileCount) return 0;
+	HRSRC hSrc = FindResource(NULL,MAKEINTRESOURCE(ArcFile[arcFileNum].resID),"binary");
+	HGLOBAL hGR = LoadResource(NULL,hSrc);
+	char *lpMemory = (char *)LockResource(hGR) +ArcFile[arcFileNum].pack_file[num].seekPoint;
+	
+	if(0==ArcFile[arcFileNum].pack_file[num].bCompress){
+		out_size = ArcFile[arcFileNum].pack_file[num].pack_size;
+		*fileBuf = (char *)cl_malloc(out_size+1);
+		CopyMemory(*fileBuf,lpMemory,out_size);
+		FreeResource(hGR);
+		(*fileBuf)[out_size] = 0;
+		return (out_size);
+	}
+	readFile = (unsigned char *)cl_malloc(ArcFile[arcFileNum].pack_file[num].pack_size+1);
+	if(NULL==readFile)return 0;
+	CopyMemory(readFile,lpMemory,ArcFile[arcFileNum].pack_file[num].pack_size);
+	FreeResource(hGR);
+	readFile[ArcFile[arcFileNum].pack_file[num].pack_size] = 0;
+	out_size = DecodePackFile(ArcFile[arcFileNum].pack_file[num].pack_size - 4,readFile,fileBuf);
+	cl_free(readFile);
+	return out_size;
+}
+
+int ClReadFile::StreamOpenFile(int arcFileNum,LPCSTR decFile,int &size)
+{
+	int		i;
+	i = SearchFile(arcFileNum,decFile);
+	if( (-1)==i ) return -1;
+	return(StreamOpenFileNum(arcFileNum,i,size));
+} // ClReadFile::StreamOpenFile
+
+int ClReadFile::StreamOpenFileNum(int arcFileNum,int num,int &size)
+{
+	int			stNum;
+
+	if(num >= ArcFile[arcFileNum].fileCount) return -1;	
+	if(ArcFile[arcFileNum].pack_file[num].bCompress) return -1;	
+
+	for(stNum=0;stNum<ArcFile[arcFileNum].streamMax;stNum++){
+		if(0 > ArcFile[arcFileNum].streamInfo[stNum].num){	
+			ArcFile[arcFileNum].streamInfo[stNum].num = num;
+			ArcFile[arcFileNum].streamInfo[stNum].seekPoint = ArcFile[arcFileNum].pack_file[num].seekPoint;
+			break;
+		}
+	}
+	if(stNum==ArcFile[arcFileNum].streamMax){
+		stream_info		streamInfo;
+		streamInfo.num = num;
+		streamInfo.seekPoint = ArcFile[arcFileNum].pack_file[num].seekPoint;
+		ArcFile[arcFileNum].streamInfo.push_back(streamInfo);
+		ArcFile[arcFileNum].streamMax ++;
+	}
+	size = ArcFile[arcFileNum].pack_file[num].pack_size;
+	return stNum;
+} // ClReadFile::StreamOpenFileNum
+
+ClResult ClReadFile::StreamCloseFile(int arcFileNum,int streamNum)
+{
+	if(streamNum>=ArcFile[arcFileNum].streamMax || 0==ArcFile[arcFileNum].streamMax) return Cl_FILE_NOTFOUND;
+	if(streamNum == (ArcFile[arcFileNum].streamMax-1)){
+		ArcFile[arcFileNum].streamInfo.pop_back();
+		ArcFile[arcFileNum].streamMax --;
+	}else{
+		ArcFile[arcFileNum].streamInfo[streamNum].num = -1;
+	}
+	return Cl_OK;
+} // ClReadFile::StreamCloseFile
+
+int ClReadFile::StreamReadFile(int arcFileNum,int streamNum,char *read_buf,int size)
+{
+	DWORD	rsize;
+	int		fileEnd;
+
+	if(streamNum>=ArcFile[arcFileNum].streamMax || 0>ArcFile[arcFileNum].streamInfo[streamNum].num) return 0;
+	if(Cl_FILE_SEEK_ERROR == StreamSeekFile(arcFileNum,streamNum,0,FILE_CURRENT)){
+		return 0;
+	}
+	fileEnd = ArcFile[arcFileNum].pack_file[ArcFile[arcFileNum].streamInfo[streamNum].num].seekPoint +
+		ArcFile[arcFileNum].pack_file[ArcFile[arcFileNum].streamInfo[streamNum].num].pack_size;
+	if( (ArcFile[arcFileNum].streamInfo[streamNum].seekPoint +size) > fileEnd){
+		size = fileEnd - ArcFile[arcFileNum].streamInfo[streamNum].seekPoint;
+	}
+	ReadFile(ArcFile[arcFileNum].handle,read_buf,size,&rsize,NULL);
+	ArcFile[arcFileNum].streamInfo[streamNum].seekPoint += rsize;
+	return rsize;
+} // ClReadFile::StreamReadFile
+
+ClResult ClReadFile::StreamSeekFile(int arcFileNum,int streamNum,int seekSize,int moveMethod)
+{
+	DWORD	ret,seekPoint;
+	switch(moveMethod){
+	  case (FILE_CURRENT):
+		seekPoint = ArcFile[arcFileNum].streamInfo[streamNum].seekPoint +seekSize;
+		break;
+	  case (FILE_BEGIN):
+		seekPoint = ArcFile[arcFileNum].pack_file[ArcFile[arcFileNum].streamInfo[streamNum].num].seekPoint +seekSize;
+		break;
+	  case (FILE_END):
+		seekPoint = ArcFile[arcFileNum].pack_file[ArcFile[arcFileNum].streamInfo[streamNum].num].seekPoint
+			+ArcFile[arcFileNum].pack_file[ArcFile[arcFileNum].streamInfo[streamNum].num].pack_size
+			+seekSize;
+		break;
+	}
+	ret = SetFilePointer(ArcFile[arcFileNum].handle,seekPoint,NULL,FILE_BEGIN);
+	if(ret==0xffffffff) return Cl_FILE_SEEK_ERROR;
+	ArcFile[arcFileNum].streamInfo[streamNum].seekPoint = seekPoint;
+	return Cl_OK;
+} // ClReadFile::StreamSeekFile
+
+ClResult ClReadFile::ExtractFileNum(int arcFileNum, int num)
+{
+	char	*fileBuf,*newFile;
+	DWORD	Size,wSize;
+
+	Size = ReadPackFileNum(arcFileNum,num,&fileBuf);
+	if(0==Size) return Cl_FILE_NOTFOUND;
+	newFile = GetFileName(arcFileNum,num);
+
+	HANDLE fh = CreateFile(newFile,GENERIC_WRITE,0,NULL,CREATE_ALWAYS,FILE_ATTRIBUTE_ARCHIVE,NULL);
+	if(INVALID_HANDLE_VALUE==fh)return Cl_CANNOT_CREATFILE;
+	WriteFile(fh,fileBuf,Size,&wSize,NULL);
+	CloseHandle(fh);
+	cl_free(fileBuf);
+	return Cl_OK;
+} // ClReadFile::ExtractFileNum
+
+ClResult ClReadFile::ExtractFile(int arcFileNum, LPCSTR decFile)
+{
+	int num = SearchFile(arcFileNum,decFile);
+	return( ExtractFileNum(arcFileNum,num) );
+} // ClReadFile::ExtractFile
+
+char *ClReadFile::GetFileName(int arcFileNum,int num)
+{
+	if(num >= ArcFile[arcFileNum].fileCount) return NULL;
+	return (ArcFile[arcFileNum].pack_file[num].fname);
+} // ClReadFile::GetFileName
+
+BOOL ClReadFile::FindFile(int arcFileNum, LPCSTR decFile)
+{
+	char	filename[MAX_PATH];
+	wsprintf(filename,"%s\\%s",ArcFile[arcFileNum].dirName,decFile);
+	DWORD attr = GetFileAttributes(filename);
+	if((-1)!=attr && (attr & FILE_ATTRIBUTE_ARCHIVE))return TRUE;
+	if((-1)!=SearchFile(arcFileNum,decFile))return TRUE;
+	return FALSE;
+}
+
+int ClReadFile::SearchFile(int arcFileNum, LPCSTR decFile,BOOL errCheck)
+{
+	int		i,j;
+	int		min,max;
+
+	i = ArcFile[arcFileNum].fileCount /2;
+	min = 0; max = ArcFile[arcFileNum].fileCount;
+	while(0!=(j=my_strcmpi((BYTE *)ArcFile[arcFileNum].pack_file[i].fname,(BYTE *)decFile))){
+		if(j<0){
+			if(min==i){
+				i = -1;
+				break;
+			}
+			min = i;
+		}else{
+			if(max==i){
+				i = -1;
+				break;
+			}
+			max = i;
+		}
+		i = (max+min)/2;
+	}
+	if( (-1)==i){
+		if(errCheck){
+			myOutputDebugString("%s内のﾌｧｲﾙ『%s』が見つかりませんでした。\n",ArcFile[arcFileNum].dirName,decFile);
+#ifndef _MASTER
+			MessageBox(NULL,decFile,"ﾌｧｲﾙｵｰﾌﾟﾝｴﾗｰ",MB_OK|MB_ICONERROR);
+#endif _MASTER
+		}
+	}
+	return i;
+} // ClReadFile::SearchFile
+
+int ClReadFile::SequentialSearchFile(int arcFileNum, LPCSTR decFile)
+{
+	for(int i=0;i<ArcFile[arcFileNum].fileCount;i++){
+		if(_stricmp(ArcFile[arcFileNum].pack_file[i].fname,decFile) == 0)break;
+	}
+	if(i==ArcFile[arcFileNum].fileCount){	
+		return -1;
+	}
+	return i;
+} // ClReadFile::SequentialSearchFile
+
+int ReadPackFileFromMem(char *decFile,char *packMem,char **fileBuf)
+{
+	int			i,j,min,max,out_size = 0;
+	LACHEAD		head;
+	file_info	*pack_file;
+	char		*tmpMem = packMem;
+
+	CopyMemOffset(&head,&tmpMem,sizeof(LACHEAD));
+	pack_file = new file_info[head.fileCnt];
+	CopyMemOffset(pack_file,&tmpMem,sizeof(file_info)*head.fileCnt);
+	for(i=0;i<head.fileCnt;i++){
+		for(j=0;j<int(lstrlen(pack_file[i].fname));j++){
+			pack_file[i].fname[j] = ~(pack_file[i].fname[j]);
+		}
+	}
+	i = head.fileCnt /2;
+	min = 0; max = head.fileCnt;
+	while(0!=(j=_stricmp(pack_file[i].fname,decFile))){
+		if(j<0){
+			if(min==i){
+				i = -1;
+				break;
+			}
+			min = i;
+		}else{
+			if(max==i){
+				i = -1;
+				break;
+			}
+			max = i;
+		}
+		i = (max+min)/2;
+	}
+	if( (-1)==i){
+		myOutputDebugString("『%s』が見つかりませんでした。\n",decFile);
+	}else{
+		tmpMem = packMem +pack_file[i].seekPoint;
+		if(0==pack_file[i].bCompress){
+			out_size = pack_file[i].pack_size;
+			*fileBuf = (char *)cl_malloc(out_size+1);
+			CopyMemory(*fileBuf,tmpMem,out_size);
+			(*fileBuf)[out_size] = 0;
+		}else{
+			out_size = readFile->DecodePackFile(pack_file[i].pack_size - 4,(LPBYTE)tmpMem,fileBuf);
+		}
+	
+	}
+	delete[] pack_file;
+	return out_size;
+} // ReadPackFileFromMem

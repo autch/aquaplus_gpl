@@ -1,0 +1,25 @@
+Source: xvidcore
+Section: libs
+Priority: optional
+Maintainer: Edouard Gomez <ed.gomez@free.fr>
+Build-Depends: debhelper (>> 4.0.0), nasm (>= 0.98.34) | not+i386
+Standards-Version: 3.5.8
+
+Package: libxvidcore4
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: High quality ISO MPEG4 codec library
+ XviD is a high quality/performance ISO MPEG4 codec. This package contains
+ the runtime core library that can be used by various programs (among them
+ mplayer/mencoder, transcode)
+
+Package: libxvidcore4-dev
+Section: libdevel
+Architecture: any
+Depends: libxvidcore4 (= ${Source-Version})
+Provides: libxvidcore-dev
+Conflicts: libxvidcore-dev, libxvidcore2-dev, libxvidcore3-dev
+Description: Development files for the XviD ISO MPEG4 codec
+ This package includes header files and static library needed for development
+ based on XviD core.

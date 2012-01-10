@@ -1,0 +1,1752 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="XviDDec"
+	ProjectGUID="{2EF3E0BD-3670-4EC2-B6B6-2A7ECCA6FE03}"
+	SccProjectName=""
+	SccLocalPath="">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory=".\Debug"
+			IntermediateDirectory=".\Debug"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderFile=".\Debug/XviDDec.pch"
+				AssemblerListingLocation=".\Debug/"
+				ObjectFile=".\Debug/"
+				ProgramDataBaseFileName=".\Debug/"
+				WarningLevel="2"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="XviDDec_d.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\Debug/XviDDec.tlb"
+				HeaderFileName=""/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="3081"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory=".\Release"
+			IntermediateDirectory=".\Release"
+			ConfigurationType="4"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			ManagedExtensions="FALSE">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="2"
+				GlobalOptimizations="TRUE"
+				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="TRUE"
+				FavorSizeOrSpeed="1"
+				OmitFramePointers="TRUE"
+				OptimizeForProcessor="2"
+				OptimizeForWindowsApplication="TRUE"
+				PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				BufferSecurityCheck="FALSE"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderFile=".\Release/XviDDec.pch"
+				AssemblerListingLocation=".\Release/"
+				ObjectFile=".\Release/"
+				ProgramDataBaseFileName=".\Release/"
+				WarningLevel="2"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="XviDDec.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				MkTypLibCompatible="TRUE"
+				SuppressStartupBanner="TRUE"
+				TargetEnvironment="1"
+				TypeLibraryName=".\Release/XviDDec.tlb"
+				HeaderFileName=""/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="3081"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="docs"
+			Filter="">
+			<File
+				RelativePath="..\..\AUTHORS">
+			</File>
+			<File
+				RelativePath="..\..\ChangeLog">
+			</File>
+			<File
+				RelativePath="..\..\CodingStyle">
+			</File>
+			<File
+				RelativePath="..\..\doc\INSTALL">
+			</File>
+			<File
+				RelativePath="..\..\LICENSE">
+			</File>
+			<File
+				RelativePath="..\..\README">
+			</File>
+			<File
+				RelativePath="..\..\doc\README">
+			</File>
+			<File
+				RelativePath="..\..\TODO">
+			</File>
+		</Filter>
+		<Filter
+			Name="bitstream"
+			Filter="">
+			<File
+				RelativePath="..\xvidcore\src\bitstream\bitstream.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\bitstream\cbp.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\bitstream\mbcoding.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<Filter
+				Name="bitstream_asm"
+				Filter="">
+				<File
+					RelativePath="..\xvidcore\src\bitstream\x86_asm\cbp_3dne.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\bitstream\x86_asm\cbp_mmx.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\bitstream\x86_asm\cbp_sse2.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+			</Filter>
+			<Filter
+				Name="bitstream_h"
+				Filter="">
+				<File
+					RelativePath="..\xvidcore\src\bitstream\bitstream.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\bitstream\cbp.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\bitstream\mbcoding.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\bitstream\vlc_codes.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\bitstream\zigzag.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="dct"
+			Filter="">
+			<File
+				RelativePath="..\xvidcore\src\dct\fdct.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\dct\idct.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\dct\simple_idct.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<Filter
+				Name="dct_asm"
+				Filter="">
+				<File
+					RelativePath="..\xvidcore\src\dct\x86_asm\fdct_mmx_ffmpeg.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\dct\x86_asm\fdct_mmx_skal.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\dct\x86_asm\fdct_sse2_skal.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\dct\x86_asm\idct_3dne.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\dct\x86_asm\idct_mmx.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\dct\x86_asm\idct_sse2_dmitry.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\dct\x86_asm\simple_idct_mmx.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+			</Filter>
+			<Filter
+				Name="dct_h"
+				Filter="">
+				<File
+					RelativePath="..\xvidcore\src\dct\fdct.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\dct\idct.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="image"
+			Filter="">
+			<File
+				RelativePath="..\xvidcore\src\image\colorspace.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\image\font.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\image\image.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\image\interpolate8x8.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\image\postprocessing.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\image\qpel.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\image\reduced.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<Filter
+				Name="image_asm"
+				Filter="">
+				<File
+					RelativePath="..\xvidcore\src\image\x86_asm\colorspace_mmx.inc">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\image\x86_asm\colorspace_rgb_mmx.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -I$(InputDir)\ -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -I$(InputDir)\ -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\image\x86_asm\colorspace_yuv_mmx.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -I$(InputDir)\ -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -I$(InputDir)\ -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\image\x86_asm\colorspace_yuyv_mmx.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -I$(InputDir)\ -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -I$(InputDir)\ -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\image\x86_asm\interpolate8x8_3dn.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\image\x86_asm\interpolate8x8_3dne.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\image\x86_asm\interpolate8x8_mmx.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\image\x86_asm\interpolate8x8_xmm.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\image\x86_asm\qpel_mmx.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\image\x86_asm\reduced_mmx.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+			</Filter>
+			<Filter
+				Name="image_h"
+				Filter="">
+				<File
+					RelativePath="..\xvidcore\src\image\colorspace.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\image\font.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\image\image.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\image\interpolate8x8.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\image\postprocessing.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\image\qpel.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\image\reduced.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="motion"
+			Filter="">
+			<File
+				RelativePath="..\xvidcore\src\motion\estimation_bvop.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\motion\estimation_common.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\motion\estimation_gmc.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\motion\estimation_pvop.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\motion\estimation_rd_based.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\motion\gmc.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\motion\motion_comp.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\motion\sad.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\motion\vop_type_decision.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<Filter
+				Name="motion_asm"
+				Filter="">
+				<File
+					RelativePath="..\xvidcore\src\motion\x86_asm\sad_3dn.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\motion\x86_asm\sad_3dne.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\motion\x86_asm\sad_mmx.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\motion\x86_asm\sad_sse2.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\motion\x86_asm\sad_xmm.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+			</Filter>
+			<Filter
+				Name="motion_h"
+				Filter="">
+				<File
+					RelativePath="..\xvidcore\src\motion\estimation.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\motion\gmc.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\motion\motion.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\motion\motion_inlines.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\motion\sad.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="prediction"
+			Filter="">
+			<File
+				RelativePath="..\xvidcore\src\prediction\mbprediction.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<Filter
+				Name="prediction_h"
+				Filter="">
+				<File
+					RelativePath="..\xvidcore\src\prediction\mbprediction.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="quant"
+			Filter="">
+			<File
+				RelativePath="..\xvidcore\src\quant\quant_h263.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\quant\quant_matrix.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\quant\quant_mpeg.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<Filter
+				Name="quant_asm"
+				Filter="">
+				<File
+					RelativePath="..\xvidcore\src\quant\x86_asm\quantize_h263_3dne.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\quant\x86_asm\quantize_h263_mmx.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\quant\x86_asm\quantize_mpeg_mmx.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\quant\x86_asm\quantize_mpeg_xmm.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+			</Filter>
+			<Filter
+				Name="quant_h"
+				Filter="">
+				<File
+					RelativePath="..\xvidcore\src\quant\quant.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\quant\quant_matrix.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="utils"
+			Filter="">
+			<File
+				RelativePath="..\xvidcore\src\utils\emms.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\utils\mbtransquant.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\utils\mem_align.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\utils\mem_transfer.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\utils\timer.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<Filter
+				Name="utils_asm"
+				Filter="">
+				<File
+					RelativePath="..\xvidcore\src\utils\x86_asm\cpuid.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\utils\x86_asm\interlacing_mmx.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\utils\x86_asm\mem_transfer_3dne.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\utils\x86_asm\mem_transfer_mmx.asm">
+					<FileConfiguration
+						Name="Debug|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32">
+						<Tool
+							Name="VCCustomBuildTool"
+							Description="Assembling $(InputPath)"
+							CommandLine="nasm -f win32 -DPREFIX -o $(IntDir)\$(InputName).obj $(InputPath)
+"
+							Outputs="$(IntDir)\$(InputName).obj"/>
+					</FileConfiguration>
+				</File>
+			</Filter>
+			<Filter
+				Name="utils_h"
+				Filter="">
+				<File
+					RelativePath="..\xvidcore\src\utils\emms.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\utils\mbfunctions.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\utils\mem_align.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\utils\mem_transfer.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\utils\ratecontrol.h">
+				</File>
+				<File
+					RelativePath="..\xvidcore\src\utils\timer.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter
+			Name="xvid_h"
+			Filter="">
+			<File
+				RelativePath="..\xvidcore\src\decoder.h">
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\encoder.h">
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\global.h">
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\portab.h">
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\xvid.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="plugins"
+			Filter="">
+			<File
+				RelativePath="..\xvidcore\src\plugins\plugin_2pass1.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\plugins\plugin_2pass2.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\plugins\plugin_dump.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\plugins\plugin_lumimasking.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\plugins\plugin_psnr.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="..\xvidcore\src\plugins\plugin_single.c">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+						BasicRuntimeChecks="3"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<File
+			RelativePath="..\xvidcore\src\decoder.c">
+			<FileConfiguration
+				Name="Debug|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+					BasicRuntimeChecks="3"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="..\xvidcore\src\encoder.c">
+			<FileConfiguration
+				Name="Debug|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+					BasicRuntimeChecks="3"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="..\xvidcore\src\xvid.c">
+			<FileConfiguration
+				Name="Debug|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;ARCH_IS_32BIT;ARCH_IS_IA32;$(NoInherit)"
+					BasicRuntimeChecks="3"/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="Release|Win32">
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions="NDEBUG;ARCH_IS_IA32;WIN32;_WINDOWS;ARCH_IS_32BIT;$(NoInherit)"/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath=".\xvid_dec.cpp">
+		</File>
+		<File
+			RelativePath=".\xvid_dec.h">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

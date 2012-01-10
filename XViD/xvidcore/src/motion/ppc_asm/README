@@ -1,0 +1,9 @@
+sad_altivec.s has been generated from sad_altivec.c by
+gcc version 2.95.3 20010111 (BLL/AltiVec prerelease/franzo/20010111)
+
+Some hand tweaking has been done.
+
+Do not overwrite sad_altivec.s if you are not sure of what you're doing.
+
+--
+Guillaume <gmorin@morinfr.org>

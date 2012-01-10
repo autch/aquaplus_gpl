@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AVGYMZ", "AVGYMZ.vcproj", "{89D0C95F-D785-405E-A210-16F154C9D74B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Master = Master
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{89D0C95F-D785-405E-A210-16F154C9D74B}.Master.ActiveCfg = Master|Win32
+		{89D0C95F-D785-405E-A210-16F154C9D74B}.Master.Build.0 = Master|Win32
+		{89D0C95F-D785-405E-A210-16F154C9D74B}.Release.ActiveCfg = Release|Win32
+		{89D0C95F-D785-405E-A210-16F154C9D74B}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

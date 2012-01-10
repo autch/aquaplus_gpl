@@ -1,0 +1,296 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日本語 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU2 MENU DISCARDABLE 
+BEGIN
+    POPUP "画面設定"
+    BEGIN
+        MENUITEM "フルスクリーン",              ID_FULL_MODE
+        MENUITEM "ウィンドウモード",            ID_WINDOW_MODE
+        MENUITEM "END_隠し",                    ID_END2
+    END
+    POPUP "環境設定"
+    BEGIN
+        MENUITEM "さんぷる２",                  ID_SAMPLE2
+    END
+END
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "画面設定"
+    BEGIN
+        MENUITEM "フルスクリーン",              ID_FULL_MODE
+        MENUITEM "ウィンドウモード",            ID_WINDOW_MODE
+    END
+    POPUP "環境設定"
+    BEGIN
+        MENUITEM "サウンドの管理",              ID_SOUND
+        MENUITEM SEPARATOR
+        POPUP "エフェクト速度"
+        BEGIN
+            MENUITEM "エフェクトカット",            ID_EFFECT_CUT
+            MENUITEM "高速",                        ID_EFFECT_HIGH
+            MENUITEM "普通",                        ID_EFFECT_NORMAL
+            MENUITEM "なめらか",                    ID_EFFECT_LOW
+        END
+        POPUP "テキスト速度"
+        BEGIN
+            MENUITEM "瞬間表示",                    ID_TEXT_CUT
+            MENUITEM "高速",                        ID_TEXT_HIGH
+            MENUITEM "普通",                        ID_TEXT_NORMAL
+            MENUITEM "なめらか",                    ID_TEXT_LOW
+        END
+        POPUP "テキストスキップ設定"
+        BEGIN
+            MENUITEM "既読のみスキップ",            ID_SKIP_READ
+            MENUITEM "未読もスキップ",              ID_SKIP_NOREAD
+        END
+        POPUP "ムービー設定"
+        BEGIN
+            MENUITEM "低画質（処理は軽い）",        ID_MOV1
+            MENUITEM "高画質",                      ID_MOV2
+            MENUITEM "超高画質（きわめて重い）",    ID_MOV3
+        END
+        MENUITEM SEPARATOR
+        POPUP "オートバトル設定"
+        BEGIN
+            MENUITEM "行動終了後、行動前のオートバトルに戻る", ID_AUTO_RET
+            MENUITEM "行動終了後、待機する。",      ID_WAIT_MODE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "フルスクリーン時、メニューを自動で出さない", ID_MENU_MODE
+    END
+    MENUITEM "",                            65535
+    MENUITEM "終了",                        ID_END
+    POPUP "ヘルプ", HELP
+    BEGIN
+        MENUITEM "バージョン情報",              ID_VER
+        MENUITEM "環境情報",                    ID_INFO
+        MENUITEM SEPARATOR
+        MENUITEM "LeafHPに行く （オンライン必須）", ID_LEAFHP
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_D3D_SETTING DIALOG DISCARDABLE  0, 0, 215, 219
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "D3D環境設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "起動",IDOK,100,200,50,14
+    PUSHBUTTON      "終了",IDCANCEL,156,200,50,14
+    EDITTEXT        IDC_EDIT1,8,16,200,56,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_WANTRETURN
+    GROUPBOX        "お使いのマシン環境",IDC_STATIC,4,4,208,72
+    CONTROL         "フルスクリーン起動",IDC_RADIO1,"Button",
+                    BS_AUTORADIOBUTTON,8,76,76,12
+    CONTROL         "ウィンドウモード起動",IDC_RADIO2,"Button",
+                    BS_AUTORADIOBUTTON,8,92,76,12
+    CONTROL         "戦闘時、低スペック用画像を使う（高速、メモリ小、低画質）",
+                    IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,108,
+                    180,12
+    CONTROL         "ミップマップを使用する（メモリ大　高画質）",IDC_CHECK2,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,124,156,12
+    CONTROL         "フルスクリーン時、16BIT（高速、低画質）",IDC_CHECK3,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,140,132,12
+    CONTROL         "テクセルの中央をずらさない。(画面が崩れる場合のみチェック)",
+                    IDC_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,156,
+                    200,12
+    DEFPUSHBUTTON   "初期設定",IDFLASH,44,200,50,14
+    CONTROL         "次回起動時、このウインドウを表示しない。(デバッグモードのみ)",
+                    IDC_CHECK5,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | 
+                    WS_TABSTOP,8,188,196,12
+    CONTROL         "RADEON 8500～9200を使っている（画面が崩れる場合のみ）",
+                    IDC_CHECK6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,172,
+                    200,12
+END
+
+IDD_DIALOG10 DIALOG DISCARDABLE  0, 0, 143, 259
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "音声ファイルロード状況"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    LISTBOX         IDC_LIST2,0,0,144,260,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_DIALOG8 DIALOG DISCARDABLE  0, 0, 214, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "サウンド管理"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,108,76,48,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,160,76,48,14
+    CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_BOTH | WS_TABSTOP,40,16,140,12
+    CONTROL         "Slider1",IDC_SLIDER2,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_BOTH | WS_TABSTOP,40,36,140,12
+    CONTROL         "Slider1",IDC_SLIDER3,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_BOTH | WS_TABSTOP,40,56,140,12
+    LTEXT           "MIN",IDC_STATIC,40,4,16,8
+    LTEXT           "MAX",IDC_STATIC,168,4,16,8
+    PUSHBUTTON      "テスト",IDC_TEST,180,32,28,16,NOT WS_VISIBLE
+    PUSHBUTTON      "テスト",IDC_TEST2,180,52,28,16,NOT WS_VISIBLE
+    CONTROL         "BGM",IDC_CHECK_BGM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,4,16,32,12
+    CONTROL         "効果音",IDC_CHECK_SE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,4,36,32,12
+    CONTROL         "音声",IDC_CHECK_VOICE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,4,56,32,12
+    CONTROL         "Hシーン中男性ヴォイスOFF",IDC_CHECK_ERO_VOICE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,4,76,96,12
+END
+
+IDD_DIALOG_VERSION DIALOG DISCARDABLE  0, 0, 198, 39
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "バージョン情報"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,144,20,50,14
+    ICON            IDI_ICON1,IDC_STATIC,8,4,20,20
+    LTEXT           "Tears to Tiara  ver. 1.02",IDC_STATIC,32,4,104,12
+    LTEXT           "───────────────",IDC_STATIC,32,16,108,8
+    LTEXT           "(c) 2005  Leaf/AQUAPLUS",IDC_STATIC,36,24,100,12
+END
+
+IDD_DIALOG1 DIALOG DISCARDABLE  0, 0, 206, 83
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "環境情報"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,152,64,50,14
+    EDITTEXT        IDC_EDIT1,4,4,200,56,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_WANTRETURN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DIALOG_D3D_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 208
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 212
+    END
+
+    IDD_DIALOG10, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 136
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 252
+    END
+
+    IDD_DIALOG8, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 207
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_DIALOG_VERSION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 191
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 32
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 199
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 76
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON    DISCARDABLE     "icon1.ico"
+#endif    // 日本語 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

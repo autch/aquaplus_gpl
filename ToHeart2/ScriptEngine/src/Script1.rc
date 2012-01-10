@@ -1,0 +1,619 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日本語 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENUEX 
+BEGIN
+    POPUP "画面モード",                     65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "フルスクリーンモード",        40004,MFT_STRING,MFS_ENABLED
+        MENUITEM "ウィンドウモード",            40005,MFT_STRING,MFS_ENABLED
+    END
+    POPUP "環境設定",                       65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        POPUP "サウンドの管理",                 65535,MFT_STRING,MFS_ENABLED
+        BEGIN
+            MENUITEM "ボリュームの調節",            40045,MFT_STRING,
+            MFS_ENABLED
+            MENUITEM "BGMを再生する",               40069,MFT_STRING,
+            MFS_ENABLED
+            MENUITEM "効果音を再生する",            40070,MFT_STRING,
+            MFS_ENABLED
+            MENUITEM "音声のキャラ別設定",          40082,MFT_STRING,
+            MFS_ENABLED
+        END
+        POPUP "エフェクト速度",                 65535,MFT_STRING,MFS_ENABLED
+        BEGIN
+            MENUITEM "瞬間表示",                    40016,MFT_STRING,
+            MFS_ENABLED
+            MENUITEM "高速",                        40017,MFT_STRING,
+            MFS_ENABLED
+            MENUITEM "普通",                        40018,MFT_STRING,
+            MFS_ENABLED
+            MENUITEM "なめらか",                    40019,MFT_STRING,
+            MFS_ENABLED
+        END
+        POPUP "テキスト速度",                   65535,MFT_STRING,MFS_ENABLED
+        BEGIN
+            MENUITEM "オートモード設定",            40085,MFT_STRING,
+            MFS_ENABLED
+            MENUITEM "瞬間表示",                    40009,MFT_STRING,
+            MFS_ENABLED
+            MENUITEM "高速",                        40010,MFT_STRING,
+            MFS_ENABLED
+            MENUITEM "普通",                        40011,MFT_STRING,
+            MFS_ENABLED
+            MENUITEM "なめらか",                    40012,MFT_STRING,
+            MFS_ENABLED
+        END
+        POPUP "テキストスキップ設定",           65535,MFT_STRING,MFS_ENABLED
+        BEGIN
+            MENUITEM "既読のみスキップ",            40062,MFT_STRING,
+            MFS_ENABLED
+            MENUITEM "未読もスキップ",              40063,MFT_STRING,
+            MFS_ENABLED
+        END
+        POPUP "テキスト送り設定",               65535,MFT_STRING,MFS_ENABLED
+        BEGIN
+            MENUITEM "「履歴・送り」ボタン",        40074,MFT_STRING,
+            MFS_ENABLED
+            MENUITEM "左クリック押下中",            40075,MFT_STRING,
+            MFS_ENABLED
+        END
+        POPUP "ホイールボタン設定",             65535,MFT_STRING,MFS_ENABLED
+        BEGIN
+            MENUITEM "文字消し／表示",              40053,MFT_STRING,
+            MFS_ENABLED
+            MENUITEM "メッセージスキップ",          40055,MFT_STRING,
+            MFS_CHECKED
+        END
+        POPUP "ムービー設定",                   65535,MFT_STRING,MFS_ENABLED
+        BEGIN
+            MENUITEM "低解像度",                    40077,MFT_STRING,
+            MFS_ENABLED
+            MENUITEM "高解像度",                    40078,MFT_STRING,
+            MFS_ENABLED
+            MENUITEM "最高品質",                    40079,MFT_STRING,
+            MFS_ENABLED
+            MENUITEM "オーバーレイを使用する",      ID_MOV_OL,MFT_STRING,
+            MFS_ENABLED
+        END
+        POPUP "システム速度",                   65535,MFT_STRING,MFS_ENABLED
+        BEGIN
+            MENUITEM "60fps",                       ID_60FPS,MFT_STRING,
+            MFS_ENABLED
+            MENUITEM "30fps（一部でタイミングがずれます、音飛びなどが発生するときのみチェック。）", 
+                                                    ID_30FPS,MFT_STRING,
+            MFS_ENABLED
+        END
+    END
+    POPUP "システム",                       65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "終了",                        40006,MFT_STRING,MFS_ENABLED
+        MENUITEM "タイトルへ戻る",              40076,MFT_STRING,MFS_ENABLED
+    END
+    POPUP "ヘルプ",                         65535,
+    MFT_STRING | MFT_RIGHTJUSTIFY,MFS_ENABLED
+    BEGIN
+        MENUITEM "バージョン情報",              40035,MFT_STRING,MFS_ENABLED
+        MENUITEM "環境情報",                    40047,MFT_STRING,MFS_ENABLED
+        MENUITEM MFT_SEPARATOR
+        MENUITEM "Leafホームページを開く（オンライン時専用）", 40036,
+        MFT_STRING,MFS_ENABLED
+    END
+END
+
+IDR_MENU2 MENU 
+BEGIN
+    POPUP "画面モード"
+    BEGIN
+        MENUITEM "フルスクリーンモード",        ID_DISP_FULL
+        MENUITEM "ウィンドウモード",            ID_DISP_WINDOW
+    END
+    POPUP "環境設定"
+    BEGIN
+        POPUP "サウンドの管理"
+        BEGIN
+            MENUITEM "ボリュームの調節",            ID_VOLUME
+            MENUITEM "BGMを再生する",               ID_BGM_CHECK
+            MENUITEM "効果音を再生する",            ID_SE_CHECK
+            POPUP "音質"
+            BEGIN
+                MENUITEM "44.100MHz 16bit",             ID_44100_16
+                MENUITEM "22.050MHz 16bit",             ID_22050_16
+                MENUITEM "11.025MHz 16bit",             ID_11025_16
+                MENUITEM "44.100MHz 8bit",              ID_44100_8
+                MENUITEM "22.050MHz 8bit",              ID_22050_8
+                MENUITEM "11.025MHz 8bit",              ID_11025_8
+            END
+        END
+        POPUP "文字速度"
+        BEGIN
+            MENUITEM "オートモード設定",            ID_AUTO_MODE
+            MENUITEM "瞬間表示",                    ID_TEXT_CUT
+            MENUITEM "高速",                        ID_TEXT_HIGH
+            MENUITEM "普通",                        ID_TEXT_NORMAL
+            MENUITEM "なめらか",                    ID_TEXT_LOW
+        END
+        POPUP "エフェクト速度"
+        BEGIN
+            MENUITEM "瞬間表示",                    ID_EFFECT_CUT
+            MENUITEM "高速",                        ID_EFFECT_HIGH
+            MENUITEM "普通",                        ID_EFFECT_NORMAL
+            MENUITEM "なめらか",                    ID_EFFECT_LOW
+        END
+        POPUP "ホイールボタン設定"
+        BEGIN
+            MENUITEM "文字消し／表示",              ID_WINDOW_CUT
+            MENUITEM "メッセージスキップ",          ID_MES_SKIP, CHECKED
+        END
+        POPUP "メッセージスキップ設定"
+        BEGIN
+            MENUITEM "既読スキップ",                ID_SKIP_READ
+            MENUITEM "未読もスキップ",              ID_SKIP_NOREAD
+            MENUITEM "選択肢まで既読スキップ",      ID_SKIP_SELECT_R
+            MENUITEM "選択肢までスキップ",          ID_SKIP_SELECT_N
+        END
+        POPUP "ムービー設定"
+        BEGIN
+            MENUITEM "低解像度",                    ID_MOV_LOW
+            MENUITEM "高解像度",                    ID_MOV_HIGH
+            MENUITEM "最高品質",                    ID_MOV_MAX
+        END
+    END
+    MENUITEM "終了",                        ID_END
+    POPUP "ヘルプ"
+    BEGIN
+        MENUITEM "バージョン情報",              ID_VER
+        MENUITEM "環境情報",                    ID_INFO
+        MENUITEM SEPARATOR
+        MENUITEM "Leafホームページを開く（オンライン時専用）", ID_UPDATE
+        MENUITEM "",                            ID_END2
+    END
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG1 DIALOG  0, 0, 186, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "警告"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,132,36,50,14
+    CONTROL         "以後このメッセージを表示しない",IDC_CHECK1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,4,36,112,12
+    LTEXT           "現在WINDOWSは、HighColorモード(16BIT)で動作しています。\nHighColorモードでは、画質と速度が低下するため、\nFullColorモード(24,32BIT)での動作を推奨します。",
+                    IDC_STATIC,4,4,180,28
+END
+
+IDD_DIALOG3 DIALOG  0, 0, 186, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "警告"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,68,36,50,14
+    LTEXT           "現在WINDOWSは、256色モードで動作しています。\n256色モードでは、正常に描画されません。\nHighColorモード以上(16,24,32BIT)に変更して下さい。",
+                    IDC_STATIC,4,4,180,28
+END
+
+IDD_DIALOG4 DIALOG  0, 0, 214, 115
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "環境設定"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,156,96,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,100,96,50,14
+    CONTROL         "する",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    72,28,32,12
+    CONTROL         "しない",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,120,28,
+                    32,12
+    CONTROL         "速度優先",IDC_RADIO5,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,72,44,40,12
+    CONTROL         "演出優先",IDC_RADIO6,"Button",BS_AUTORADIOBUTTON,120,44,
+                    44,12
+    CONTROL         "一瞬",IDC_RADIO7,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    72,60,28,12
+    CONTROL         "高速",IDC_RADIO8,"Button",BS_AUTORADIOBUTTON,104,60,28,
+                    12
+    CONTROL         "普通",IDC_RADIO11,"Button",BS_AUTORADIOBUTTON,132,60,28,
+                    12
+    CONTROL         "なめらか",IDC_RADIO13,"Button",BS_AUTORADIOBUTTON,164,
+                    60,40,12
+    CONTROL         "一瞬",IDC_RADIO9,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    72,76,28,12
+    CONTROL         "高速",IDC_RADIO10,"Button",BS_AUTORADIOBUTTON,104,76,28,
+                    12
+    CONTROL         "普通",IDC_RADIO12,"Button",BS_AUTORADIOBUTTON,132,76,28,
+                    12
+    CONTROL         "なめらか",IDC_RADIO14,"Button",BS_AUTORADIOBUTTON,164,
+                    76,40,12
+    LTEXT           "インターレス描画",IDC_STATIC,12,28,56,12,SS_CENTERIMAGE
+    LTEXT           "描画エフェクト",IDC_STATIC,12,44,48,12,SS_CENTERIMAGE
+    GROUPBOX        "",IDC_STATIC,4,0,204,92
+    LTEXT           "文字速度",IDC_STATIC,12,60,32,12,SS_CENTERIMAGE
+    LTEXT           "エフェクト速度",IDC_STATIC,12,76,48,12,SS_CENTERIMAGE
+    PUSHBUTTON      "設定を環境に最適化",IDCANCEL2,4,96,80,14
+END
+
+IDD_DIALOG5 DIALOG  0, 0, 187, 271
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "環境情報"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,136,252,50,14
+    EDITTEXT        IDC_EDIT1,4,4,176,240,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_NOHIDESEL | ES_OEMCONVERT | 
+                    ES_READONLY | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+END
+
+IDD_DIALOG6 DIALOG  0, 0, 122, 467
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "スクリプト進行管理"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    LISTBOX         IDC_LIST2,0,0,120,428,WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_DIALOG7 DIALOG  0, 0, 267, 59
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Routes"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "閉じる(&C)",IDOK,212,8,50,14
+    PUSHBUTTON      "詳細(&D)>>",IDCANCEL,212,40,50,14
+    ICON            118,IDC_STATIC,8,8,18,21
+    LTEXT           "このプログラムは不正な処理を行ったので強制終了されます。\n\n終了しない場合は、プログラムの製造元に連絡してください。",
+                    IDC_STATIC,32,8,168,48
+END
+
+IDD_DIALOG8 DIALOG  0, 0, 215, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ボリューム管理"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,160,76,48,16
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,108,76,48,16
+    CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_BOTH | WS_TABSTOP,28,12,144,12
+    CONTROL         "Slider1",IDC_SLIDER2,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_BOTH | WS_TABSTOP,28,36,144,12
+    LTEXT           "ＢＧＭ",IDC_STATIC,4,12,24,12
+    LTEXT           "効果音",IDC_STATIC,4,36,24,12
+    LTEXT           "MIN",IDC_STATIC,28,28,16,8
+    LTEXT           "MAX",IDC_STATIC,160,28,16,8
+    LTEXT           "MIN",IDC_STATIC,28,4,16,8
+    LTEXT           "MAX",IDC_STATIC,160,4,16,8
+    PUSHBUTTON      "テスト",IDC_TEST,176,32,32,16
+    CONTROL         "Slider1",IDC_SLIDER3,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_BOTH | WS_TABSTOP,28,60,144,12
+    LTEXT           "音声",IDC_STATIC,4,60,24,12
+    LTEXT           "MIN",IDC_STATIC,28,52,16,8
+    LTEXT           "MAX",IDC_STATIC,160,52,16,8
+    PUSHBUTTON      "テスト",IDC_TEST2,176,56,32,16
+END
+
+IDD_DIALOG9 DIALOG  0, 0, 182, 51
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Leafユーザー認証"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "ゲーム開始",IDOK,128,16,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,128,36,50,14
+    EDITTEXT        IDC_EDIT1,4,12,120,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,4,36,120,12,ES_AUTOHSCROLL
+    LTEXT           "ユーザーＩＤ",IDC_STATIC,4,4,40,8
+    LTEXT           "パスワード",IDC_STATIC,4,28,36,8
+END
+
+IDD_DIALOG10 DIALOG  0, 0, 123, 205
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "音声ファイルロード状況"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    LISTBOX         IDC_LIST2,0,0,120,204,WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_DIALOG11 DIALOGEX 0, 0, 191, 39
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,144,20,42,14
+    LTEXT           "ToHeart2 XRATED    Ver1.02",IDC_STATIC,35,4,109,8
+    LTEXT           "(c) 2005  Leaf/AQUAPLUS",IDC_STATIC,40,24,100,12
+    LTEXT           "―――――――――――――――",IDC_STATIC,35,12,105,8
+    ICON            IDI_ICON1,IDC_STATIC,8,4,20,20
+END
+
+IDD_DIALOG12 DIALOGEX 0, 0, 168, 93
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "主人公の名前を入力してください"
+FONT 9, "ＭＳ ゴシック", 400, 0, 0x80
+BEGIN
+    EDITTEXT        IDC_EDIT1,24,8,52,16
+    EDITTEXT        IDC_EDIT2,98,8,54,16
+    EDITTEXT        IDC_EDIT3,24,28,52,16
+    EDITTEXT        IDC_EDIT4,98,28,54,16
+    EDITTEXT        IDC_EDIT5,98,48,54,16
+    DEFPUSHBUTTON   "OK",IDOK,107,72,50,16
+    PUSHBUTTON      "標準",IDC_RESET_NAME,44,72,48,16
+    LTEXT           "姓",IDC_STATIC,8,12,12,12
+    LTEXT           "名",IDC_STATIC,84,12,12,12
+    LTEXT           "かな",IDC_STATIC,4,32,19,11
+    LTEXT           "ニックネーム",IDC_STATIC,32,52,52,12
+END
+
+IDD_VOICE DIALOGEX 0, 0, 212, 57
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "音声の設定"
+FONT 9, "ＭＳ ゴシック", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,155,40,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,96,40,50,14
+    CONTROL         "このみ",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,8,8,36,8
+    CONTROL         "愛佳",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    48,8,36,8
+    CONTROL         "環",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,88,
+                    8,40,8
+    CONTROL         "花梨",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    132,8,36,8
+    CONTROL         "珊瑚",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    172,8,36,8
+    CONTROL         "瑠璃",IDC_CHECK6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    8,24,36,8
+    CONTROL         "由真",IDC_CHECK7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    48,24,36,8
+    CONTROL         "ルーシー",IDC_CHECK8,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,88,24,40,8
+    CONTROL         "優季",IDC_CHECK9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    172,24,36,8
+    CONTROL         "その他",IDC_CHECK10,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,8,40,36,8
+    CONTROL         "全員",IDC_CHECK_ALL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,48,40,36,8
+    CONTROL         "ささら",IDC_CHECK11,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,132,24,36,8
+END
+
+IDD_DIALOG13 DIALOGEX 0, 0, 246, 74
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "オートモード設定"
+FONT 9, "ＭＳ ゴシック", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,175,52,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,119,52,50,14
+    CONTROL         "",IDC_SLIDER1,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_BOTH | WS_TABSTOP,65,14,168,11
+    LTEXT           "ｷｰ待ちｳｪｲﾄ",IDC_STATIC,7,15,58,11
+    LTEXT           "１秒",IDC_STATIC,69,7,19,8
+    LTEXT           "　５秒",IDC_STATIC,209,7,25,8
+    CONTROL         "",IDC_SLIDER2,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_BOTH | WS_TABSTOP,65,34,168,11
+    LTEXT           "ﾍﾟｰｼﾞ変えｳｪｲﾄ",IDC_STATIC,7,35,60,11
+    LTEXT           "２秒",IDC_STATIC,69,27,19,8
+    LTEXT           "１０秒",IDC_STATIC,208,27,26,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DIALOG3, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DIALOG4, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 207
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 108
+    END
+
+    IDD_DIALOG5, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 264
+    END
+
+    IDD_DIALOG6, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 115
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 460
+    END
+
+    IDD_DIALOG7, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 260
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 52
+    END
+
+    IDD_DIALOG8, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 208
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_DIALOG9, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 175
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 44
+    END
+
+    IDD_DIALOG10, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 116
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 198
+    END
+
+    IDD_DIALOG11, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 184
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 32
+    END
+
+    IDD_DIALOG12, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 160
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+
+    IDD_VOICE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 205
+        VERTGUIDE, 29
+        VERTGUIDE, 42
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 50
+    END
+
+    IDD_DIALOG13, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 234
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP                  "bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR1             CURSOR                  "CURSOR1.CUR"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS 
+BEGIN
+    VK_RETURN,      ID_WINCHANGE,           VIRTKEY, ALT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "T2_256.ico"
+#endif    // 日本語 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

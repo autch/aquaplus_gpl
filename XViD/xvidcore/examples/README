@@ -1,0 +1,209 @@
++--------------------------------------------------------------------+
+|                      XviD core lib examples                        |
++--------------------------------------------------------------------+
+
+In this directory can find some examples how to use XviD MPEG4 codec 
+in your own programs. 
+
+** cactus.pgm.bz2
+----------------------------------------------------------------------
+
+This a  test sequence of 3 images  with a cactus moving  from right to
+left.   It  bzip2-compressed for  size  reason  (half  the size  of  a
+ZIP-file). Binaries  of bunzip2  are available for  all major  OSes at
+http://sources.redhat.com/bzip2/  The original  source  of the  cactus
+image is unknown...
+
+* xvid_encraw.c
+----------------------------------------------------------------------
+
+This is a  small example that allows you to encode  YUV streams or PGM
+files into a MPEG4 stream. It  can output single files (on per encoded
+frame), or one  file for all the enced stream (m4v  format or a simple
+container format that we called  mp4u, its description can be found at
+the end of this file). This  program also outputs some very basic time
+results.
+
+Type "xvid_encraw -help" to have all options' description.
+
+Examples :
+
+  1) bzip2 -dc cactus.pgm.bz2 | ./xvid_encraw -t 1
+
+  This  command decompress  cactus.pgm.bz2 and  pipe the  pgm  file to
+  xvid_encraw that  will compress it  to mpeg4 format.  No  mp4 stream
+  output is written to disc.
+
+  2) ./xvid_encraw -t 1 -i cactus.pgm -m 1
+
+  Compress cactus.pgm frames into mpeg4  stream, and then writes a m4v
+  file per encoded frame.
+
+  3) ./xvid_encraw -t 1 -i cactus.pgm -m 1 -o my_xvid_example.m4v
+
+  Same thing as above but saves all raw m4v data to a unique file.
+
+  4) ./xvid_encraw -t 1 -i cactus.pgm -m 1 -mt 1 -o my_xvid_example.mp4u
+
+  Same as  above but  encapsulates the m4v  stream into the  mp4u file
+  format.
+
+** xvid_decraw.c
+----------------------------------------------------------------------
+
+This  is a  decoder  example that  is able  to  decode a  m4v or  mp4u
+stream. You can use it to decode what xvid_encraw encoded.
+
+Type "xvid_decraw -help" to have all options' description.
+
+Examples :
+
+  1) ./xvid_decraw -w 352 -h 240 -t 1 -i stream.mp4u -d 1
+
+  This command decodes a mp4u  file (-t 1 option) from stream.mp4u and
+  writes all decoded frames to single PGM files (framexxxxx.pgm).
+
+  2) cat stream.m4v | ./xvid_decraw -w 352 -h 240
+
+  This  one reads  a m4v  file from  standard input  and  outputs just
+  decoding statistics.
+
+  NB :-w and -h parameters  are mandatory  as  XviD  lacks a "discover
+      width and height" from m4v stream. This feature will be added at
+      a later time, so for now we must use these options.
+
+
+* xvid_stat.c
+----------------------------------------------------------------------
+
+This  last example  is a  kind of  xvid_dec/encraw merged  program, it
+encodes  PGM or  YUV  files and  decode  the resulting  mp4 stream  to
+measure both encoding and decoded times as well as PSNR.
+
+Type "xvid_stat -help" to have all options' description.
+
+Examples:
+
+  1) ./xvid_stat < cactus.pgm
+
+  This calls xvid_stat with standard  parameters for the 3 frames from
+  the cactus file from examples directory.
+
+  Output should look similar to this: 
+
+  Frame     0: intra 1, enctime =   4.7 ms length=  12470 bytes dectime =   4.2 ms PSNR 39.93
+  Frame     1: intra 0, enctime =   6.9 ms length=   1369 bytes dectime =   1.8 ms PSNR 40.40
+  Frame     2: intra 0, enctime =   6.6 ms length=   3354 bytes dectime =   2.3 ms PSNR 42.03
+  Avg. Q6 br 0900 (0.43 bpp) size   5731 (1146 kbps / 0.54 bpp) enc:  164.7 fps, dec:  362.0 fps
+  PSNR P(2): 41.22 ( 40.40 , 42.03 ; 0.4698 ) I(1): 39.93 ( 39.93 , 39.93 ; 0.0000 )
+
+
+  The lines in detail: 
+
+  For every input frame one line is printed containing the data:
+
+  Frame   the frame number, starting with 0
+
+  intra   if the frame was encoded as I-frame (1) or P-frame (0), when
+          B-frames  are  supported,  they   will  get  a  value  of  2
+          here. enctime time for  encoding this frame, in milliseconds
+          (1/1000th of a second)
+
+  length  length of the MPEG-4 bitstream generated from this frame (in
+          bytes)
+
+  dectime time for decoding 
+
+  PSNR     picture signal  to noice  ratio (a measurement  of quality,
+           higher is better)
+
+  Then in  the end, two status  lines are printed, these  can be used,
+  e.g. for automatic quality tests:
+
+  Avg.      indicated that we are now talking about average values
+
+  Q6        quality parameter  that was used  (so here it  was quality
+            level 6)
+
+  br 0900   bitrate mode was used with  a bitrate of 900kbps the other
+            possibility is "q" instead of "br", see another example.
+
+  size 5731 average size of an encoded frame
+
+  1146 kbps "real" bitrate  that was achieved, it may  differ from the
+            bitrate given to the codec as a parameter, because this is
+            real life
+
+  0.54 bpp  number  of bit  per pixel  for the  encoding,  useful when
+            comparing videos of different size
+
+  enc: 164.7 fps   speed of encoding in frames per second
+
+  dec: 362.0 fps   speed of decoding in frames per second
+
+  2) ./xvid_stat -q 6 -b 900 -f 25  -i cactus.pgm 
+
+  This does  exactly the  same as above,  but parameters  are provided
+  instead of using default value. Output should be the same as in last
+  example.   Note that first  and second  parameter are  0, indicating
+  that a PGM  file should be read (which has a  header that includes X
+  and Y dimensions).
+
+
+  3) ./xvid_stat -t 1 -q 1 -quant 8  -i cactus.pgm 
+
+  Output: 
+
+  Frame     0: intra 1, enctime =   4.1 ms length=   8420 bytes dectime =   3.4 ms PSNR 36.36
+  Frame     1: intra 0, enctime =   3.0 ms length=    659 bytes dectime =   1.5 ms PSNR 36.36
+  Frame     2: intra 0, enctime =   2.7 ms length=    595 bytes dectime =   1.5 ms PSNR 36.43
+  Avg. Q1  q 0008 (0.00 bpp) size   3224 ( 644 kbps / 0.31 bpp)enc:  304.3 fps, dec:  467.1 fps
+  PSNR P(2): 36.40 ( 36.36 , 36.43 ; 0.0210 ) I(1): 36.36 ( 36.36 , 36.36 ; 0.0000 )
+
+  This  time,  quality  1 is  used,  so  output  values are  a  little
+  different. Since the  fourth parameter (here 8) is  smaller than 32,
+  it is not  considered as a bitrate value, but  as a fixed quantizer.
+  So in the "Avg." line there is a :
+
+  q 0008   meaning "fixed quantizer mode" with quantizer 8. 
+
+  4) ./xvid_stat -w 176 -h 144 -q 5 -b 112 -i foreman.qcif  
+
+  This switches  xvid_stat to  RAW instead of  PGM mode. The  input is
+  expected  to  be images  of  dimensions  176*144  in raw  YUV  4:2:0
+  format. (So every  image is exactly 38016 = 176*144  + 88*72 + 88*72
+  bytes in  size).  Some  reference streams are  in this  format. Note
+  that  you  MUST give  correct  dimensions,  because  they cannot  be
+  detected from the  YUV material.  Apart from this,  the example uses
+  quality 5  and a bitrate of 112  kbps with video speed  of 30 frames
+  per second (this is not encoding or decoding speed, but the speed at
+  which the video  would be played.  This value  is only important for
+  ratecontrol...)
+
+
+
+** MP4U Format
+----------------------------------------------------------------------
+
+  - Header :
+
+    +-----+-----+-----+-----+
+    |  M  |  P  |  4  |  U  |
+    +-----+-----+-----+-----+
+    |1byte|1byte|1byte|1byte|
+    +-----+-----+-----+-----+
+
+  - Encoded frame
+
+    +------+----------------------- ... --+
+    | size |  ... Frame data ...          |
+    +------+----------------------- ... --+
+    |4bytes|     'size' bytes             |
+    +------+----------------------- ... --+
+
+      + size is written in big endian format
+      + frame data is m4v raw data generated by XviD core.
+
+  - File format
+
+    Header + x*Encoded frame

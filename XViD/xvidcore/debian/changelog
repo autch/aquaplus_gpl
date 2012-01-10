@@ -1,0 +1,37 @@
+xvidcore (1.0.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Edouard Gomez <ed.gomez@free.fr>  Sun, 29 Aug 2004 12:30:39 +0200
+
+xvidcore (1.0.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Edouard Gomez <ed.gomez@free.fr>  Sun,  6 Jun 2004 14:22:24 +0200
+
+xvidcore (1.0.0-2) unstable; urgency=low
+
+  * New debian packaging attempt. (Closes: #232658)
+  * debian/control: nasm dependency for i386 changed from nasm [i386]
+    to nasm | not+i386 on advice from Robert Millan.
+  * debian/README.Debian: the text was a bit confusing, changed it so
+    it doesn't suggest the package is compiled for a specific subarch.
+  * debian/rules: fixed the dh_link package targets (were using
+    $version instead of $major)
+
+ -- Edouard Gomez <ed.gomez@free.fr>  Sat, 29 May 2004 12:10:37 +0200
+
+xvidcore (1.0.0-1) unstable; urgency=low
+
+  * New upstream release 
+
+ -- Edouard Gomez <ed.gomez@free.fr>  Sun,  9 May 2004 00:29:15 +0200
+
+xvidcore (1.0-0cvs) unstable; urgency=low
+
+  * Initial Release.
+  * First attempt to package XviD.
+
+ -- Edouard Gomez <ed.gomez@free.fr>  Sun,  4 May 2003 20:55:37 +0200
+
